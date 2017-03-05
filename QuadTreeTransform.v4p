@@ -1,0 +1,171 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
+   <PATCH nodename="C:\Documents\repos\vvvv-copycatofravenkwok\QuadTreeTransform.v4p" systemname="QuadTreeTransform" filename="C:\Users\cloako\Documents\vvvv-sandbox\20170302_RavenKwok\QuadTreeTransform.v4p" scrollx="0" scrolly="-360">
+   <NODE id="0" systemname="QuadTree (2d)" filename="%VVVV%\addonpack\lib\nodes\plugins\NTrees.dll" nodename="QuadTree (2d)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2250" top="3195" width="915" height="270">
+   </BOUNDS>
+   <PIN pinname="InputXY" visible="1" slicecount="38" values="0.276675217197608,0.581949802817819,-0.495222143711657,0.388645562156856,-0.976845382360339,-0.25724623292429,-1.08716437288258,0.579710828659583,-0.283572221767899,-1.08725945149518,0.0198393431905853,0.278151441440944,-0.902509186901955,-0.236731152936608,0.292483396845047,-0.666888565734134,0.738504840455262,0.731329017059393,0.706979116023804,0.54355956369665,0.296709533294326,0.696131981922654,-0.594326622114277,0.0539780170313998,-0.0828130719331733,0.236731694522577,0.587077715548382,-0.967167099838716,0.258597068972712,-1.28393095323491,-0.631429169591829,0.678737159313243,0.569879262399124,-0.869200791266651,0.0310937556601377,-0.350816326230021,0.153598794338121,-0.408313551727909">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   <PIN pinname="CentersXY" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Elements" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Bounds MinXY" visible="1" slicecount="2" values="-1,-1">
+   </PIN>
+   </NODE>
+   <NODE id="1" systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2235" top="4440" width="600" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="Perlin (2d)" nodename="Perlin (2d)" componentmode="Hidden" filename="">
+   <BOUNDS type="Node" left="2250" top="2205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Input XY" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Octaves" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Frequency" slicecount="1" values="2.5">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Persistence" slicecount="1" values="0.9">
+   </PIN>
+   </NODE>
+   <NODE id="3" systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2250" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE id="4" systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2250" top="2700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="-0.5">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE id="5" systemname="Transform (Transform 2d Vector)" nodename="Transform (Transform 2d Vector)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1500" top="3855" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="CenterXY" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="ScaleXY" slicecount="2" visible="1" values="1,1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Rotate" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="TranslateXY" slicecount="2" values="0,0">
+   </PIN>
+   </NODE>
+   <NODE id="6" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform In|">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="495" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="495" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="5" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="CentersXY" dstnodeid="5" dstpinname="CenterXY">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Width" dstnodeid="1" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Height" dstnodeid="1" dstpinname="Y">
+   </LINK>
+   <NODE id="7" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Out|">
+   </PIN>
+   <BOUNDS type="Box" left="2235" top="4995" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2235" top="4995" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Transform Out" dstnodeid="7" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Y">
+   </LINK>
+   <NODE id="8" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Random Seed|">
+   </PIN>
+   <BOUNDS type="Box" left="2580" top="495" width="1050" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2580" top="495" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Random Seed">
+   </LINK>
+   <NODE id="9" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Spread Count|">
+   </PIN>
+   <BOUNDS type="Box" left="3900" top="495" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3900" top="495" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="0" dstpinname="InputXY">
+   </LINK>
+   <NODE id="10" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Size">
+   </PIN>
+   <BOUNDS type="Box" left="3495" top="4995" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3495" top="4995" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Width" dstnodeid="10" dstpinname="Y Input Value" linkstyle="VHV">
+   <LINKPOINT x="2475" y="4223">
+   </LINKPOINT>
+   <LINKPOINT x="3495" y="4223">
+   </LINKPOINT>
+   </LINK>
+   <BOUNDS type="Window" left="15810" top="3735" width="7365" height="7275">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   </PATCH>
