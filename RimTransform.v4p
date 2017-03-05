@@ -65,11 +65,11 @@
    <NODE systemname="Zip (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Zip (Value)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="2430" top="2895" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input Count" slicecount="1" values="3">
+   <PIN pinname="Input Count" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
-   <PIN pinname="Input 3" visible="1">
+   <PIN pinname="Input 3" visible="1" slicecount="22" values="0.96,0.96,0.88,0.88,0.84,0.84,0.84,0.84,0.88,0.88,0.84,0.84,0.84,0.84,0.88,0.88,0.92,0.92,0.92,0.92,0.92,0.92">
    </PIN>
    <PIN pinname="Input 2" slicecount="1" values="1">
    </PIN>
@@ -140,13 +140,11 @@
    </LINK>
    <LINK srcnodeid="5" srcpinname="Output" dstnodeid="6" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="6" dstpinname="Input 3">
-   </LINK>
    <LINK srcnodeid="4" srcpinname="Output" dstnodeid="7" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="7" srcpinname="Output" dstnodeid="8" dstpinname="Input 1">
    </LINK>
-   <BOUNDS type="Window" left="14475" top="8100" width="7950" height="7500">
+   <BOUNDS type="Window" left="4695" top="5250" width="9345" height="7500">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
    </PACK>
