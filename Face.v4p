@@ -100,22 +100,6 @@
    <PIN pinname="Z" slicecount="1" visible="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="GaussianSpread (Spreads)" nodename="GaussianSpread (Spreads)" componentmode="Hidden" id="25">
-   <BOUNDS type="Node" left="3345" top="4950" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Random Seed" slicecount="1" visible="1" values="3">
-   </PIN>
-   <PIN pinname="Spread Count" visible="1">
-   </PIN>
-   <PIN pinname="Standard Deviation" slicecount="1" visible="1" values="0.5">
-   </PIN>
-   <PIN pinname="Input" slicecount="1" values="-0.5">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="21" srcpinname="Count" dstnodeid="25" dstpinname="Spread Count" hiddenwhenlocked="0" linkstyle="PolyLine">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="570" top="450" width="795" height="240">
    </BOUNDS>
@@ -166,8 +150,6 @@
    <BOUNDS type="Window" left="15270" top="3180" width="9705" height="9840">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="Output 2" dstnodeid="25" dstpinname="Random Seed" hiddenwhenlocked="0">
-   </LINK>
    <NODE systemname="InputMorph (Value)" nodename="InputMorph (Value)" componentmode="Hidden" id="50">
    <BOUNDS type="Node" left="3345" top="5445" width="870" height="270">
    </BOUNDS>
@@ -179,8 +161,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="50" srcpinname="Output" dstnodeid="24" dstpinname="Z">
-   </LINK>
-   <LINK srcnodeid="25" srcpinname="Output" dstnodeid="50" dstpinname="Input 2">
    </LINK>
    <NODE systemname="timeline" filename="timeline.v4p" nodename="timeline.v4p" componentmode="Hidden" id="72">
    <BOUNDS type="Node" left="570" top="3585" width="1230" height="270">
@@ -335,5 +315,39 @@
    <LINK srcnodeid="114" srcpinname="Transform Out" dstnodeid="10" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="111" srcpinname="Size" dstnodeid="114" dstpinname="Size">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="115">
+   <BOUNDS type="Node" left="3345" top="5055" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="116">
+   <BOUNDS type="Node" left="3345" top="4635" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Count" dstnodeid="116" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output 2" dstnodeid="116" dstpinname="Random Seed">
+   </LINK>
+   <LINK srcnodeid="116" srcpinname="Output" dstnodeid="115" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="115" srcpinname="Output" dstnodeid="50" dstpinname="Input 2">
    </LINK>
    </PATCH>
